@@ -49,13 +49,15 @@ def decrypt(encrypted_data, password):
     return plaintext.decode()
 
 
-# Then I made a loop to run the functions in a CLI program
+# Then I made a loop to run the functions in a simple CLI program
 
-program_state = True
+first_run = True
 
-while program_state:
+while True:
 
-    input('Welcome to your simple AES encryption tool! Press enter to get started!\n')
+    if first_run is True:
+        input('Welcome to your simple AES encryption tool! Press enter to get started!\n')
+        first_run = False
 
     action_choice = input('Would you like to encrypt or decrypt?\n').lower()
 
@@ -76,9 +78,10 @@ while program_state:
         print(f'Here is your decrypted message: {decrypted_message}')
 
 
-    again = input('Would you like to encrypt/decrypt another message?\n').lower()
+    again = input('Would you like to encrypt/decrypt another message? (yes/no)\n').lower()
 
     if again in ['no', 'n', 'not', 'done', 'exit']:
+        print(f'Thanks for using my script!')
         break
     else:
         continue
