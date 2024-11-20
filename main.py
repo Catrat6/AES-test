@@ -6,7 +6,7 @@ from cryptography.hazmat.backends import default_backend
 import os
 import base64
 
-# encrypt with AES function set
+# encrypt with AES function set, I used AI to quickly write these
 
 def derive_key(password, salt):
     """Derive a 256-bit key from the password and salt."""
@@ -49,7 +49,7 @@ def decrypt(encrypted_data, password):
     return plaintext.decode()
 
 
-# loop to run the functions in
+# Then I made a loop to run the functions in a CLI program
 
 program_state = True
 
